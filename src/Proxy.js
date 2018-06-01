@@ -13,7 +13,7 @@ export const Proxy = (src: string, options: Options): Promise<string> => {
 
     return new Promise((resolve, reject) => {
         const responseType =
-            FEATURES.SUPPORT_CORS_XHR && FEATURES.SUPPORT_RESPONSE_TYPE ? 'blob' : 'text';
+            FEATURES.SUPPORT_CORS_XHR && FEATURES.SUPPORT_RESPONSE_TYPE ? 'text' : 'text';
         const xhr = FEATURES.SUPPORT_CORS_XHR ? new XMLHttpRequest() : new XDomainRequest();
         xhr.onload = () => {
             if (xhr instanceof XMLHttpRequest) {
